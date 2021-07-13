@@ -126,29 +126,4 @@ class Window(QMainWindow):
     #     dialog = 1
 
 
-    def deleteContact(self):
-        """Delete the selected contact from the database"""
-        row = self.table.currentIndex().row()
-        if row < 0:
-            return
-        messageBox = QMessageBox.warning(
-            self,
-            "Warning!",
-            "Do you want to remove the selected contact?",
-            QMessageBox.Ok | QMessageBox.Cancel,
-        )
-        if messageBox == QMessageBox.Ok:
-            self.contactsModel.deleteContact(row)
-    
-    def clearContacts(self):
-        """remove all contacts from the database"""
-        messageBox = QMessageBox.warning(
-            self,
-            "Warning!",
-            "Do you want to remove all your contacts?",
-            QMessageBox.Ok | QMessageBox.Cancel
-        )
-        if messageBox == QMessageBox.Ok:
-            self.contactsModel.clearContacts()
-
     
